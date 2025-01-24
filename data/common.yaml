@@ -15,7 +15,7 @@ puppet_enterprise::profile::agent::package_inventory_enabled: true
 
 profile::gitlab::external_url: http://jesse-gitlab.p9.puppet.net
 
-profile::underscore_param::_bar: underscore param looked up in hiera ok
+# profile::underscore_param::_bar: underscore param looked up in hiera ok
 
 gitlab::gitlab_rails:
   time_zone: 'UTC'

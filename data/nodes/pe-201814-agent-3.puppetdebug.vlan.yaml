@@ -1,0 +1,11 @@
+---
+message: Why hello there from data/nodes/pe-201814-agent-3.puppetdebug.vlan.yaml
+
+alias_somestring: "%{alias('somestring')}"
+alias_missingstring: "%{alias('missingstring')}"
+
+
+profile::test_agent::config:
+    option_1: true
+    option_3: bar
+    

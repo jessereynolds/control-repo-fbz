@@ -1,0 +1,10 @@
+{
+  "description": "sleep for a time",
+  "parameters": {
+    "seconds": {
+      "type": "Integer",
+      "description": "Number of seconds to sleep for",
+      "default": 60
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "description": "always fail",
+  "parameters": {
+    "level": {
+      "type": "Integer",
+      "description": "How hard to fail",
+      "default": 5
+    }
+  }
+}

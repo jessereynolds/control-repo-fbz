@@ -1,0 +1,22 @@
+---
+default:
+  image: ruby:2.7
+
+syntax:
+  before_script:
+    - bundle install
+  script:
+    - bundle exec rake syntax
+
+lint:
+  before_script:
+    - bundle install
+  script:
+    - bundle exec rake lint
+
+onceover:
+  before_script:
+    - bundle install
+  script:
+    - LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8 bundle exec onceover run spec
+

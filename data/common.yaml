@@ -1,0 +1,41 @@
+---
+lookup_options:
+  profile::test_agent::config:
+    merge: hash
+
+profile::test_agent::config:
+  option_1: false
+  option_2: public
+  option_3: foo
+  
+message: "This node is using common data"
+
+profile::puppet::agent::server_list: 'puppet'
+puppet_enterprise::profile::agent::package_inventory_enabled: true
+
+profile::gitlab::external_url: http://jesse-gitlab.p9.puppet.net
+
+profile::underscore_param::_bar: underscore param looked up in hiera ok
+
+gitlab::gitlab_rails:
+  time_zone: 'UTC'
+  pipeline_schedule_worker_cron: "0,5,10,15,20,25,30,35,40,45,50,55 * * * *"
+
+gitlab_ci_runner::concurrent: 8
+gitlab_ci_runner::manage_docker: true
+#gitlab_ci_runner::config_path: "etc/gitlab-runner/config.toml"
+
+gitlab_ci_runner::runners:
+  runner1: {}
+
+gitlab_ci_runner::runner_defaults:
+  url: "http://jesse-gitlab.p9.puppet.net/"
+  registration-token: "redacted"
+  executor: "docker"
+  docker-image: "ubuntu:bionic"
+  builds_dir: "/tmp"
+  cache_dir: "/tmp"
+  tag-list: "docker"
+  docker:
+    pull_policy: if-not-present
+

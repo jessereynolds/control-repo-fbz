@@ -1,0 +1,29 @@
+---
+version: 5
+
+defaults:
+  datadir: data
+  lookup_key: eyaml_lookup_key
+  options:
+    pkcs7_private_key: /etc/puppetlabs/puppet/eyaml/private_key.pkcs7.pem
+    pkcs7_public_key: /etc/puppetlabs/puppet/eyaml/public_key.pkcs7.pem
+
+hierarchy:
+#  - name: "Redis data"
+#    lookup_key: redis_lookup_key
+#    options:
+#      scopes:
+#        - "%{trusted.certname}"
+#        - "osfamily/%{facts.os.family}"
+#        - common
+
+  - name: "Node data"
+    path: "nodes/%{trusted.certname}.yaml"
+
+#  - name: "ServiceNow CMDB Data"
+#    data_hash: json_data
+#    path: "/opt/servicenow_cmdb_data/data/servicenow_cmdb_data.json"
+
+  - name: "Common data"
+    path: "common.yaml"
+

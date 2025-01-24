@@ -1,0 +1,43 @@
+---
+    name: Puppet Test and Deploy
+    
+    on:
+      push:
+        branches:
+          - '*'
+      # pull_request:
+      #   branches:
+      #     - '*'
+    
+    jobs:
+    
+      syntax_lint_onceover:
+        name: Check Syntax, Lint and Onceover
+        runs-on: ubuntu-latest
+    
+        steps:
+          - uses: actions/checkout@v2
+          - uses: ruby/setup-ruby@v1
+            with:
+              ruby-version: 2.5
+          - run: bundle install
+          - name: Check Syntax
+            run: bundle exec rake syntax
+          - name: Check Lint
+            run: bundle exec rake lint
+          - name: Onceover
+            run: bundle exec onceover run spec
+    
+    #   deploy:
+    #     name: Deploy Puppet Environment
+    #     runs-on:
+    #       - self-hosted
+    #       - puppetmaster
+    #     needs:
+    #       - syntax_lint_onceover
+    #     steps:
+    #       - name: Deploy code environment for ${{ github.ref }}
+    #         run: |
+    #           branch=`echo ${{ github.ref }} | awk -F "/" '{print $3}'`
+    #           puppet code deploy "${branch}" --wait
+    

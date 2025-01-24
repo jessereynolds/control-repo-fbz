@@ -1,0 +1,43 @@
+---
+# TODO: have onceover results published as test results in junit format, if possible
+
+resources:
+  containers:
+  - container: ruby
+    image: ruby:2.7
+
+jobs:
+- job: Syntax
+  pool:
+    vmImage: 'ubuntu-16.04'
+  container: ruby
+  steps:
+  - script: bundle install
+  - script: bundle exec rake syntax
+
+- job: Lint
+  pool:
+    vmImage: 'ubuntu-16.04'
+  container: ruby
+  steps:
+  - script: bundle install
+  - script: bundle exec rake lint
+
+- job: Onceover
+  pool:
+    vmImage: 'ubuntu-16.04'
+  container: ruby
+  steps:
+  - script: bundle install
+  - script: LANG=en_US.UTF-8 LANGUAGE=en_US.UTF-8 LC_ALL=en_US.UTF-8 bundle exec onceover run spec
+
+#- job: DeployDev
+#  pool:
+#    name: Default
+#  dependsOn:
+#    - Syntax
+#    - Lint
+#    - Onceover
+#  steps:
+#  - script: /opt/puppetlabs/bin/puppet-code deploy $(Build.SourceBranchName) --wait
+

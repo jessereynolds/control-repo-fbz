@@ -66,9 +66,6 @@ mod 'puppet-gitlab_ci_runner',
   :git => 'https://github.com/voxpupuli/puppet-gitlab_ci_runner.git',
   :branch => 'master'
 
-mod 'jessereynolds-scb_postgresql_ura',
-  :git => 'git@github.com:jessereynolds/scb_postgresql_ura.git',
-  :branch => 'main'
 mod 'dylanratcliffe-facter_cache', '1.3.1'
 
 mod 'maxadamo-hiera_redis', '0.3.0'

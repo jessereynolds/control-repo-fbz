@@ -38,7 +38,7 @@ mod 'jesse-pe_nc_backup',
   :git => 'https://github.com/jessereynolds/puppet-pe_nc_backup.git',
   :branch => 'main'
 
-mod 'puppetlabs-stdlib', '6.3.0'
+mod 'puppetlabs-stdlib', '9.7.0'
 mod 'puppetlabs-inifile', '4.2.0'
 mod 'puppetlabs-apt', '7.5.0'
 mod 'puppetlabs-facts', '1.0.0'
@@ -73,8 +73,8 @@ mod 'maxadamo-hiera_redis', '0.3.0'
 
 mod 'puppetlabs-vcsrepo', '3.1.1'
 
-mod 'puppetlabs-puppet_metrics_collector', '6.1.0'
-mod 'puppetlabs-puppet_metrics_dashboard', '2.3.1'
+# mod 'puppetlabs-puppet_metrics_collector', '6.1.0'
+# mod 'puppetlabs-puppet_metrics_dashboard', '2.3.1'
 mod 'puppet-grafana', '6.1.0'
 mod 'puppet-archive', '4.5.0'
 mod 'puppet-telegraf', '3.0.0'

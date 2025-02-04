@@ -6,6 +6,4 @@ class profile::base {
     }
     default: {}
   }
-
-  include profile::puppet::patching
 }

@@ -12,7 +12,7 @@ The main reason for this control-repo existing is to demonstrate various ways to
 
 ### Preparing
 
-Install Ruby 2.5.x or thereabouts using rbenv.
+Install Ruby 3.2.6 or thereabouts using rbenv.
 
 Install the bundler gem with `gem install bundler`
 
@@ -44,5 +44,9 @@ bundle exec rake lint
 
 ```
 bundle exec onceover run spec
+
+# or using the voxbox container: 
+
+podman run -it --rm -v $(pwd):/repo --entrypoint onceover ghcr.io/voxpupuli/voxbox:8 run spec
 ```
 

@@ -23,7 +23,11 @@ mod 'jesse-servicenow_cmdb_data',
   :branch => 'master'
 
 mod 'jesse-cacert_fingerprint'
-mod 'jesse-certificate_extensions_facts'
+#mod 'jesse-certificate_extensions_facts'
+
+mod 'jesse-certificate_extensions_facts',
+  :git    => 'https://github.com/jessereynolds/puppet-certificate_extensions_facts.git',
+  :branch => '5_random_empty_pp_facts'
 
 #mod 'jesse-test_module',
 #  :git => "https://#{token_auth}@dev.azure.com/jessereynolds/control-repo-fbz/_git/test_module",

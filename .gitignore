@@ -2,4 +2,5 @@ modules/
 .onceover
 .bundler
 .bundle
+Gemfile.lock
 
